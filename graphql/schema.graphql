@@ -1,0 +1,25 @@
+  type Thumbnails {
+    default : Image
+    medium : Image
+    high : Image
+  }
+
+  type Image {
+    url : String!
+    width : String!
+    height: String!
+  }
+  
+  type Video {
+    channelId : String!
+    searchTitle : String!
+    title : String!
+    description : String!
+    channelTitle : String!
+    thumbnails : Thumbnails
+  }
+  
+  type Query {
+    video : [Video]!
+    playlist(title:String!) : [Video]!
+  }
