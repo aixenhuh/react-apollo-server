@@ -9,7 +9,7 @@
     width : String!
     height: String!
   }
-  
+
   type Video {
     channelId : String!
     searchTitle : String!
@@ -17,9 +17,10 @@
     description : String!
     channelTitle : String!
     thumbnails : Thumbnails
+    videoId : String
   }
   
   type Query {
-    video : [Video]!
+    video(playlistId:String!) : [Video]!
     playlist(title:String!) : [Video]!
   }
