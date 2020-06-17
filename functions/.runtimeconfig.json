@@ -1,0 +1,8 @@
+{
+  "firebase": {
+    "projectId": "vuewebserver-88b2a",
+    "databaseURL": "https://vuewebserver-88b2a.firebaseio.com",
+    "storageBucket": "vuewebserver-88b2a.appspot.com",
+    "locationId": "us-central"
+  }
+}

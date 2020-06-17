@@ -1,10 +1,10 @@
-import axios from "axios";
-import dotenv from "dotenv";
+const axios = require("axios");
+const dotenv = require("dotenv");
 
 dotenv.config();
 
 const youtubekey = process.env.YOUTUBEKEY;
-export const videos = async (playlistId) => {
+exports.videos = async (playlistId) => {
     console.log(playlistId);
     var array = [];
     const { data : { items } } = await axios.get(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playlistId}&key=${youtubekey}&maxResults=10`)
@@ -16,7 +16,7 @@ export const videos = async (playlistId) => {
     return array;
 }
 
-export const getPlaylist = async (title) => {
+exports.getPlaylist = async (title) => {
     var array = [];
     const { data : { items } } = await axios.get(encodeURI(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${title}&key=${youtubekey}&maxResults=10`))
 
